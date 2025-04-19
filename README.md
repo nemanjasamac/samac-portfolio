@@ -1,12 +1,35 @@
-# React + Vite
+# 🚀 Samac Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio — a fully responsive site built with **React**, **Tailwind CSS**, and **Framer Motion**.
 
-Currently, two official plugins are available:
+This project serves as my professional showcase, highlighting my full-stack development skills, featured projects, and a bit about who I am.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎨 Custom-designed Hero Section with animated visuals
+- 💻 Responsive layout optimized for all devices
+- ⚙️ Smooth scroll and scroll-based animations
+- 🧩 Modular React components
+- 🌗 Dark-themed "Launch Sequence" aesthetic
+- 📂 Easy to extend and customize
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** (via Vite)
+- **Tailwind CSS v4**
+- **Framer Motion** (for animations)
+- **Lucide Icons**
+
+---
+
+## 🔧 Installation
+
+```bash
+git clone https://github.com/samac/samac-portfolio.git
+cd samac-portfolio
+npm install
+npm run dev
