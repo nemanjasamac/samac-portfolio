@@ -1,1 +1,61 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @import "tailwindcss";
+
+/* Animations */
+
+:root {
+  --animation-slow-float: slow-float 11s ease-in-out infinite;
+  --animation-slow-float-reverse: slow-float-reverse 14s ease-in-out infinite;
+  --animation-twinkle: twinkle 1s linear infinite;
+  --animation-spin-slow: spin-slow 20s linear infinite;
+
+}
+
+@keyframes slow-float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slow-float-reverse {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
