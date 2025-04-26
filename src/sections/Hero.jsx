@@ -107,7 +107,7 @@ export default function Hero() {
                         View Projects
                     </a>
                     <a
-                        href="mailto:contact@samac.dev"
+                        href="mailto:nemanja@samac.dev"
                         className="px-6 py-3 bg-white/10 border border-white/20 hover:bg-white/20 text-white rounded-full font-semibold transition"
                     >
                         Let’s Connect
@@ -124,8 +124,6 @@ export default function Hero() {
                     <div className="text-xs text-cyan-400 mt-1 animate-pulse">Scroll</div>
                 </div>
             </div>
-
-
         </section>
     );
 }

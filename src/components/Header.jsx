@@ -42,22 +42,26 @@ export default function Header() {
       {/* Header Bar */}
       <header
         className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-in-out ${scrolled
-            ? 'backdrop-blur-xl bg-white/10 py-1 shadow-md scale-[0.95] opacity-90'
-            : 'backdrop-blur-md bg-white/5 py-3 shadow-xl scale-100 opacity-100'
+          ? 'backdrop-blur-xl bg-white/10 py-1 shadow-md scale-[0.95] opacity-90'
+          : 'backdrop-blur-md bg-white/5 py-3 shadow-xl scale-100 opacity-100'
           } border border-white/10 rounded-full px-8 w-fit items-center justify-between gap-8 hidden md:flex`}
       >
-        <h1 className="text-cyan-400 font-bold text-lg tracking-wide whitespace-nowrap">
+        <a
+          href="/"
+          className="text-cyan-400 font-bold text-lg tracking-wide whitespace-nowrap hover:text-cyan-300 transition"
+        >
           Samac.dev
-        </h1>
+        </a>
+
 
         <nav className="flex items-center gap-4 text-white/80 text-sm">
           {sections.slice(1).map((item) => (
             <a
               key={item}
-              href={`#${item}`}
+              href={`${item}`}
               className={`px-4 py-1 rounded-full whitespace-nowrap transition ${activeSection === item
-                  ? 'bg-cyan-500/20 text-cyan-300'
-                  : 'hover:bg-cyan-400/10 hover:text-cyan-300'
+                ? 'bg-cyan-500/20 text-cyan-300'
+                : 'hover:bg-cyan-400/10 hover:text-cyan-300'
                 }`}
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
@@ -75,7 +79,12 @@ export default function Header() {
 
       {/* Hamburger */}
       <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 md:hidden flex items-center justify-between px-6 py-3 w-[90%] max-w-[400px] rounded-full backdrop-blur-md bg-white/10 border border-white/10 shadow-md">
-        <h1 className="text-cyan-400 font-bold text-lg tracking-wide">Samac.dev</h1>
+        <a
+          href="/"
+          className="text-cyan-400 font-bold text-lg tracking-wide whitespace-nowrap hover:text-cyan-300 transition"
+        >
+          Samac.dev
+        </a>
         <button
           className="text-white text-2xl"
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -103,7 +112,7 @@ export default function Header() {
               {sections.slice(1).map((item) => (
                 <a
                   key={item}
-                  href={`#${item}`}
+                  href={`${item}`}
                   onClick={() => setMenuOpen(false)}
                   className="hover:text-cyan-400 transition"
                 >

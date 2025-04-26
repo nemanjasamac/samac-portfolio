@@ -1,15 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './sections/Hero';
-import About from './sections/About';
+import Home from './pages/Home'; // ✅ new
+import AboutPage from './pages/About';
 
 export default function App() {
   return (
-    <div className="bg-black text-white min-h-screen font-sans">
+    <Router>
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-black via-[#0b0c10] to-[#030712]" />
       <Header />
       <main>
-        <Hero />
-        <About />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
       </main>
-    </div>
+    </Router>
   );
 }
