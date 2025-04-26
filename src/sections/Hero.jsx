@@ -18,9 +18,9 @@ export default function Hero() {
 
     return (
         <section
-            id="home"
-            className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-black via-[#0b0c10] to-gray-900 text-white px-6 overflow-hidden"
-        >
+        id="home"
+        className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-black via-[#0b0c10] to-black text-white overflow-hidden"
+      >
             {/* Starfield */}
             <div className="absolute inset-0 z-0 pointer-events-none animate-[var(--animation-twinkle)]">
                 <svg
@@ -124,6 +124,10 @@ export default function Hero() {
                     <div className="text-xs text-cyan-400 mt-1 animate-pulse">Scroll</div>
                 </div>
             </div>
+            <div className="absolute bottom-0 w-full h-[200px] pointer-events-none z-10">
+    <div className="w-full h-full bg-gradient-to-b from-transparent via-cyan-400/10 to-black blur-3xl animate-mist-float"></div>
+  </div>
         </section>
+        
     );
 }

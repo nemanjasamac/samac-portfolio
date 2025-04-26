@@ -1,13 +1,15 @@
 
 import Hero from '../sections/Hero';
-import ProjectCard from '../components/ProjectCard'; // updated import
+import ProjectCard from '../components/ProjectCard';
+import ParticlesBackground from '../components/ParticlesBackground';
 
 export default function Home() {
     return (
         <>
             <Hero />
-
             <section id="projects">
+            <ParticlesBackground />
+
                 <ProjectCard
                     project={{
                         title: 'Lawcrative',
@@ -24,7 +26,6 @@ export default function Home() {
                 />
 
 
-                {/* Add more projects here as needed */}
             </section>
         </>
     );
