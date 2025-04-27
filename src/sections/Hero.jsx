@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import avatar from '../assets/avatar.png';
 import { FaReact, FaVuejs, FaNodeJs, FaGitAlt, FaCss3Alt } from 'react-icons/fa';
 import { SiPostgresql, SiJavascript, SiMysql } from 'react-icons/si';
+import SpaceDots from '../components/SpaceDots';
 
 export default function Hero() {
+    const sectionRef = useRef(null);
+
     const allIcons = [
         { icon: <FaReact aria-label="React" />, link: 'https://reactjs.org' },
         { icon: <FaVuejs aria-label="Vue.js" />, link: 'https://vuejs.org' },
@@ -18,16 +21,14 @@ export default function Hero() {
 
     return (
         <section
-        id="home"
-        className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-black via-[#0b0c10] to-black text-white overflow-hidden"
-      >
-            {/* Starfield */}
+            ref={sectionRef}
+            id="home"
+            className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-black via-[#030712] to-[#050505] text-white overflow-hidden"
+        >
+            <SpaceDots count={60} color="rgba(0, 211, 241, 0.7)" opacity={0.3} className="absolute inset-0 -z-10" />
+            
             <div className="absolute inset-0 z-0 pointer-events-none animate-[var(--animation-twinkle)]">
-                <svg
-                    className="w-full h-full"
-                    xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="none"
-                >
+                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                         <radialGradient id="star-gradient" cx="50%" cy="50%" r="80%">
                             <stop offset="0%" stopColor="white" stopOpacity="0.6" />
@@ -47,11 +48,13 @@ export default function Hero() {
                 </svg>
             </div>
 
-            {/*  Aurora  */}
-            <div className="absolute top-[8%] left-[10%] w-[300px] h-[300px] bg-cyan-400 rounded-full blur-3xl opacity-20 animate-[var(--animation-slow-float)] z-0" />
-            <div className="absolute bottom-[12%] right-[5%] w-[400px] h-[400px] bg-blue-500 rounded-full blur-[100px] opacity-25 animate-[var(--animation-slow-float-reverse)] z-0" />
-
-            {/*  Avatar + Orbit  */}
+            <div 
+                className="absolute top-[8%] left-[10%] w-[300px] h-[300px] bg-cyan-400 rounded-full blur-3xl opacity-20 animate-[var(--animation-slow-float)] z-0"
+            />
+            <div 
+                className="absolute bottom-[12%] right-[5%] w-[400px] h-[400px] bg-blue-500 rounded-full blur-[100px] opacity-25 animate-[var(--animation-slow-float-reverse)] z-0"
+            />
+            {/* Main */}
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -66,7 +69,7 @@ export default function Hero() {
                                 href={tech.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`absolute w-6 h-6 text-cyan-300 cursor-pointer transition-transform duration-300 hover:scale-125 hover:text-white drop-shadow-[0_0_4px_#67e8f9] group-hover:animate-none`}
+                                className="absolute w-6 h-6 text-cyan-300 cursor-pointer transition-transform duration-300 hover:scale-125 hover:text-white drop-shadow-[0_0_4px_#67e8f9] group-hover:animate-none"
                                 style={{
                                     top: '50%',
                                     left: '50%',
@@ -78,7 +81,6 @@ export default function Hero() {
                         ))}
                     </div>
 
-                    {/* Avatar Center */}
                     <img
                         src={avatar}
                         alt="Samac Avatar"
@@ -115,8 +117,8 @@ export default function Hero() {
                 </div>
             </motion.div>
 
-            {/*  Scroll Indicator */}
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+
+            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
                 <div className="flex flex-col items-center">
                     <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex items-center justify-center">
                         <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce"></div>
@@ -124,10 +126,73 @@ export default function Hero() {
                     <div className="text-xs text-cyan-400 mt-1 animate-pulse">Scroll</div>
                 </div>
             </div>
-            <div className="absolute bottom-0 w-full h-[200px] pointer-events-none z-10">
-    <div className="w-full h-full bg-gradient-to-b from-transparent via-cyan-400/10 to-black blur-3xl animate-mist-float"></div>
-  </div>
+
+            <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none z-10">
+                <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-[250px]">
+                    <defs>
+                        <linearGradient id="fadeGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor="#00d3f1" stopOpacity="0.2" />
+                            <stop offset="40%" stopColor="#030712" stopOpacity="0.7" />
+                            <stop offset="100%" stopColor="#050505" stopOpacity="1" />
+                        </linearGradient>
+                        
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="8" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <pattern id="stars" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                            <circle cx="15" cy="25" r="0.5" fill="white" opacity="0.5" />
+                            <circle cx="40" cy="70" r="0.7" fill="white" opacity="0.7" />
+                            <circle cx="75" cy="30" r="0.3" fill="white" opacity="0.4" />
+                            <circle cx="65" cy="85" r="0.4" fill="white" opacity="0.6" />
+                            <circle cx="90" cy="10" r="0.5" fill="white" opacity="0.5" />
+                        </pattern>
+                    </defs>
+                    
+                    <path
+                        d="M0,160 C480,80 960,240 1440,160 L1440,320 L0,320 Z"
+                        fill="url(#fadeGradient)"
+                    />
+                    
+                    <path
+                        d="M0,160 C480,80 960,240 1440,160"
+                        fill="none"
+                        stroke="#00d3f1"
+                        strokeWidth="1.5"
+                        strokeOpacity="0.4"
+                        filter="url(#glow)"
+                        className="animate-[var(--animation-twinkle)]"
+                    />
+                    
+                    <path
+                        d="M0,160 C480,80 960,240 1440,160 L1440,320 L0,320 Z"
+                        fill="url(#stars)"
+                        opacity="0.3"
+                    />
+                    
+                    {Array.from({ length: 15 }).map((_, i) => {
+                        const fixedX = Math.random() * 1440;
+                        const fixedY = 160 + Math.random() * 80;
+                        const fixedRadius = Math.random() * 1 + 0.5;
+                        const fixedOpacity = Math.random() * 0.5 + 0.3;
+                        const fixedDelay = Math.random() * 3;
+                        
+                        return (
+                            <circle
+                                key={i}
+                                cx={fixedX}
+                                cy={fixedY}
+                                r={fixedRadius}
+                                fill="#00d3f1"
+                                opacity={fixedOpacity}
+                                className="animate-[pulse_3s_infinite]"
+                                style={{ animationDelay: `${fixedDelay}s` }}
+                            />
+                        );
+                    })}
+                </svg>
+            </div>
+
         </section>
-        
     );
 }

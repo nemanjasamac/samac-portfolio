@@ -11,7 +11,6 @@ html {
   --animation-slow-float-reverse: slow-float-reverse 14s ease-in-out infinite;
   --animation-twinkle: twinkle 1s linear infinite;
   --animation-spin-slow: spin-slow 20s linear infinite;
-  animation: mist-float 20s ease-in-out infinite;
   --animation-mist-float: mist-float 20s ease-in-out infinite;
 
 }
