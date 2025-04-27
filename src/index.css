@@ -11,6 +11,7 @@ html {
   --animation-slow-float-reverse: slow-float-reverse 14s ease-in-out infinite;
   --animation-twinkle: twinkle 1s linear infinite;
   --animation-spin-slow: spin-slow 20s linear infinite;
+  --animation-mist-float: mist-float 20s ease-in-out infinite;
 
 }
 
@@ -59,3 +60,16 @@ html {
     transform: rotate(360deg);
   }
 }
+
+@keyframes mist-float {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
