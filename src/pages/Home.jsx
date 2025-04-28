@@ -15,11 +15,32 @@ export default function Home({ onNavigate }) {
     }, []);
 
     return (
-        <div className="min-h-screen">
-            <Hero />
-            <ProjectsSection onNavigate={onNavigate} />
-            <SkillsSection />
-            <MiniAbout />
-        </div>
+        <>
+            <script type="application/ld+json">
+                {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Person",
+                    "name": "Nemanja Samac",
+                    "url": "https://samac.dev",
+                    "jobTitle": "Full-Stack Developer",
+                    "sameAs": [
+                        "https://github.com/nemanjasamac",
+                        "https://www.linkedin.com/in/nemanja-samac/",
+                        "https://x.com/SamacDev"
+                    ],
+                    "knowsAbout": ["React", "Vue.js", "Node.js", "JavaScript", "Web Development"],
+                    "worksFor": {
+                        "@type": "Organization",
+                        "name": "Freelance"
+                    }
+                })}
+            </script>
+            <div className="min-h-screen">
+                <Hero />
+                <ProjectsSection onNavigate={onNavigate} />
+                <SkillsSection />
+                <MiniAbout />
+            </div>
+        </>
     );
 }

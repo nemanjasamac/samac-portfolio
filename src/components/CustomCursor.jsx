@@ -11,10 +11,17 @@ export const CursorContext = createContext({
 export default function CustomCursor() {
 	const [position, setPosition] = useState({ x: 0, y: 0 });
 	const [hasMouseMoved, setHasMouseMoved] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 	const cursorRef = useRef(null);
 	const { visible, active } = useContext(CursorContext);
 
 	useEffect(() => {
+		const checkDevice = () => {
+			setIsMobile(window.innerWidth <= 768);
+		};
+
+		checkDevice();
+
 		const handleMouseMove = (e) => {
 			setPosition({ x: e.clientX, y: e.clientY });
 			if (!hasMouseMoved) {
@@ -22,12 +29,22 @@ export default function CustomCursor() {
 			}
 		};
 
+		const handleResize = () => {
+			checkDevice();
+		};
+
 		window.addEventListener('mousemove', handleMouseMove);
+		window.addEventListener('resize', handleResize);
 
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
+			window.removeEventListener('resize', handleResize);
 		};
 	}, [hasMouseMoved]);
+
+	if (isMobile) {
+		return null;
+	}
 
 	return (
 		<motion.div
