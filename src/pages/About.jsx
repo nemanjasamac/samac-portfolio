@@ -19,7 +19,7 @@ export default function AboutPage() {
 
     const timelineEntries = [
         {
-            year: '2019',
+            year: '2018',
             icon: '🧠',
             title: 'Started Learning Programming',
             desc: 'Discovered the world of code and built my first HTML/CSS pages.',
@@ -31,7 +31,7 @@ export default function AboutPage() {
             desc: 'Used Node.js and PostgreSQL to build a personal portfolio manager.',
         },
         {
-            year: '2022',
+            year: '2023',
             icon: '⚖️',
             title: 'Worked in Legal-Tech Projects',
             desc: 'Collaborated with lawyers to automate case handling and scheduling.',
@@ -89,7 +89,6 @@ export default function AboutPage() {
             </motion.div>
 
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-                {/* Bio */}
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -124,12 +123,11 @@ export default function AboutPage() {
                         </span>
                     </p>
 
-                    {/* Socials */}
                     <div className="flex gap-6 mt-8 text-cyan-400 text-xl justify-center md:justify-start">
                         <motion.a
                             whileHover={{ y: -3, color: "#ffffff", scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                            href="https://github.com"
+                            href="https://github.com/nemanjasamac"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-white transition relative"
@@ -140,7 +138,7 @@ export default function AboutPage() {
                         <motion.a
                             whileHover={{ y: -3, color: "#ffffff", scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/nemanja-samac/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-white transition"
@@ -150,7 +148,7 @@ export default function AboutPage() {
                         <motion.a
                             whileHover={{ y: -3, color: "#ffffff", scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                            href="https://twitter.com"
+                            href="https://x.com/SamacDev"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-white transition"
@@ -227,7 +225,7 @@ export default function AboutPage() {
                         { icon: "devicon-mysql-plain", title: "MySQL" },
                         { icon: "devicon-tailwindcss-plain", title: "Tailwind CSS" },
                         { icon: "devicon-javascript-plain", title: "JavaScript" },
-                        { icon: "devicon-typescript-plain", title: "TypeScript" },
+                        { icon: "devicon-docker-plain", title: "Docker" },
                         { icon: "devicon-python-plain", title: "Python" },
                         { icon: "devicon-git-plain", title: "Git" }
                     ].map((tech, index) => (
@@ -454,7 +452,6 @@ export default function AboutPage() {
                 >
                     {[
                         { emoji: '🌙', text: 'Night owl dev — peak productivity at 2am' },
-                        { emoji: '🏋️‍♂️', text: 'Loves lifting weights (and coding on rest days)' },
                         { emoji: '💻', text: 'Working on Lawcrative (legal-tech SaaS)' },
                         { emoji: '🧠', text: 'Learning LangChain & AI tools' },
                         { emoji: '🚀', text: 'Space exploration enthusiast' },

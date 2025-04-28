@@ -26,7 +26,7 @@ export default function Hero() {
             className="relative min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-b from-black via-[#030712] to-[#050505] text-white overflow-hidden"
         >
             <SpaceDots count={60} color="rgba(0, 211, 241, 0.7)" opacity={0.3} className="absolute inset-0 -z-10" />
-            
+
             <div className="absolute inset-0 z-0 pointer-events-none animate-[var(--animation-twinkle)]">
                 <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
@@ -48,13 +48,12 @@ export default function Hero() {
                 </svg>
             </div>
 
-            <div 
+            <div
                 className="absolute top-[8%] left-[10%] w-[300px] h-[300px] bg-cyan-400 rounded-full blur-3xl opacity-20 animate-[var(--animation-slow-float)] z-0"
             />
-            <div 
+            <div
                 className="absolute bottom-[12%] right-[5%] w-[400px] h-[400px] bg-blue-500 rounded-full blur-[100px] opacity-25 animate-[var(--animation-slow-float-reverse)] z-0"
             />
-            {/* Main */}
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -135,7 +134,7 @@ export default function Hero() {
                             <stop offset="40%" stopColor="#030712" stopOpacity="0.7" />
                             <stop offset="100%" stopColor="#050505" stopOpacity="1" />
                         </linearGradient>
-                        
+
                         <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                             <feGaussianBlur stdDeviation="8" result="blur" />
                             <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -148,12 +147,12 @@ export default function Hero() {
                             <circle cx="90" cy="10" r="0.5" fill="white" opacity="0.5" />
                         </pattern>
                     </defs>
-                    
+
                     <path
                         d="M0,160 C480,80 960,240 1440,160 L1440,320 L0,320 Z"
                         fill="url(#fadeGradient)"
                     />
-                    
+
                     <path
                         d="M0,160 C480,80 960,240 1440,160"
                         fill="none"
@@ -163,20 +162,20 @@ export default function Hero() {
                         filter="url(#glow)"
                         className="animate-[var(--animation-twinkle)]"
                     />
-                    
+
                     <path
                         d="M0,160 C480,80 960,240 1440,160 L1440,320 L0,320 Z"
                         fill="url(#stars)"
                         opacity="0.3"
                     />
-                    
+
                     {Array.from({ length: 15 }).map((_, i) => {
                         const fixedX = Math.random() * 1440;
                         const fixedY = 160 + Math.random() * 80;
                         const fixedRadius = Math.random() * 1 + 0.5;
                         const fixedOpacity = Math.random() * 0.5 + 0.3;
                         const fixedDelay = Math.random() * 3;
-                        
+
                         return (
                             <circle
                                 key={i}

@@ -12,7 +12,11 @@ html {
   --animation-twinkle: twinkle 1s linear infinite;
   --animation-spin-slow: spin-slow 20s linear infinite;
   --animation-mist-float: mist-float 20s ease-in-out infinite;
+  --animation-shooting-star: shooting-star 2s ease-in-out;
+}
 
+body.scroll-locked {
+  overflow: hidden !important;
 }
 
 @keyframes slow-float {
@@ -65,11 +69,43 @@ html {
   0% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(30px);
   }
+
   100% {
     transform: translateX(0);
   }
 }
 
+@keyframes shooting-star {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(45deg) scale(0);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(100vw) translateY(100vh) rotate(45deg) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100vw) translateY(100vh) rotate(45deg) scale(0);
+  }
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #00D3F2;
+}
+
+::selection {
+  color: #fff;
+  background: #00D3F2;
+}

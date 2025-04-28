@@ -120,7 +120,7 @@ export default function Header({ onNavigate, currentPage }) {
 				</nav>
 
 				<Link
-					to="/contact"
+					to="mailto:nemanja@samac.dev"
 					className="relative z-10 ml-2 px-5 py-1.5 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-black font-semibold text-sm rounded-full shadow-md transition-all duration-300 whitespace-nowrap group overflow-hidden"
 				>
 					<span className="relative z-10">Let's Connect</span>
@@ -189,7 +189,6 @@ export default function Header({ onNavigate, currentPage }) {
 				</motion.button>
 			</motion.div>
 
-			{/* Mobile menu */}
 			<AnimatePresence>
 				{menuOpen && (
 					<motion.div
